@@ -1,0 +1,136 @@
+.library-body {
+  padding: 30px;
+}
+
+.library-title {
+  h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+  display: flex;
+  justify-content: space-between;
+}
+
+.library-title-buttons {
+  button {
+    &:hover {
+      background-color: white;
+      color: rgb(12, 12, 12);
+    }
+    svg {
+      width: 13px;
+      margin-bottom: -1px;
+      margin-right: 5px;
+    }
+    p {
+      margin: 0;
+    }
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  select {
+    background-color: rgb(12, 12, 12);
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+  display: flex;
+}
+
+.library-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 20px;
+}
+
+.library-items {
+  width: 29%;
+  margin-right: 4%;
+}
+
+.library-items-thumbnail {
+  &:hover .library-items-thumbnail-desc {
+    opacity: 100%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  border-radius: 5px;
+  width: 100%;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.library-items-thumbnail-desc {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.651);
+  border: 0;
+  color: white;
+  font-size: 20px;
+  transition: 0.3s opacity ease-in-out;
+  cursor: pointer;
+}
+
+.library-items-desc {
+  h4 {
+    font-size: 15px;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  background-color: transparent;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1028px) {
+  .library-items {
+    width: 23%;
+    margin-left: 2%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .library-items {
+    width: 18%;
+    margin-left: 2%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .library-items {
+    width: 48%;
+    margin-left: 2%;
+  }
+}
