@@ -4,9 +4,9 @@
 
 # Project Odin
 
-** This project is still in the development stage! **
+This project is still in the development stage!
 
-** Many things still need to be implemented, and many things will change. **
+<b>Many things still need to be implemented, and many things will change.<b/>
 
 </div>
 
