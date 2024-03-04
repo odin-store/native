@@ -29,13 +29,45 @@ main {
 }
 
 .top-menu {
-  width: 100%;
-  position: relative;
+  width: calc(100vw - 200px);
   z-index: 9;
   padding: 20px;
   transition: all 0.5s ease-in-out;
   position: fixed;
-  top: 15px;
+  top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-menu-back {
+  a {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.068);
+    }
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  .top-menu-avatar {
+    img {
+      width: 35px;
+      height: auto;
+      border-radius: 100%;
+    }
+    &:hover {
+      background-color: transparent;
+    }
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
 }
 
 .header-position-divider {
@@ -43,7 +75,7 @@ main {
 }
 
 .menu-started {
-  top: 23px;
+  top: 25px;
   background-color: rgb(12, 12, 12);
   padding: 8px 10px;
   transform: translateY(-50px);

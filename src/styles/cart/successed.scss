@@ -1,0 +1,32 @@
+.cart-successed {
+  svg {
+    width: 200px;
+  }
+  h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  p {
+    margin: 0;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  button {
+    &:hover {
+      background-color: rgb(255, 186, 36);
+    }
+    border: 0;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}

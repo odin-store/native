@@ -12,9 +12,13 @@ import LoadingScreen from "./pages/loading/loading.tsx";
 import { store } from "./util/redux/store.ts";
 import Modal from "./components/global/modal.tsx";
 import Cart from "./pages/cart/cart.tsx";
+import NotFound from "./pages/404/notFound.tsx";
+import Login from "./pages/login/login.tsx";
+import PurchaseSuccess from "./components/cart/success.tsx";
 
 function App() {
   const [isLoading, setLoading] = useState(false);
+  const [isLoggedIn] = useState(true);
 
   if (isLoading) {
     return (
@@ -22,7 +26,18 @@ function App() {
         <ConsoleWriter />
         <ContextMenu />
         <Titlebar />
-        <LoadingScreen />
+        <LoadingScreen setLoading={setLoading} />
+      </div>
+    );
+  }
+
+  if (!isLoggedIn) {
+    return (
+      <div className="container">
+        <ConsoleWriter />
+        <ContextMenu />
+        <Titlebar />
+        <Login />
       </div>
     );
   }
@@ -41,6 +56,8 @@ function App() {
               <Route path="/library" element={<Library />} />
               <Route path="/product/:id" element={<Products />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/cart/successed" element={<PurchaseSuccess />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
         </Layout>

@@ -24,7 +24,9 @@ export default function Modal() {
     <div className="modal-background">
       <div className="modal-body">
         <h4 className="modal-title">{modal.title}</h4>
-        <div className="modal-desc">{modal.desc}</div>
+        <div className="modal-desc">
+          <p>{modal.desc}</p>
+        </div>
         <div className="modal-buttons">
           {modal.button?.map((a) => {
             return a;

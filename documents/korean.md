@@ -67,12 +67,23 @@ $ pnpm i
 .env.sample의 값들은 전부 예시 값들입니다. 사용자의 환경에 맞춰 수정해 주세요.
 
 ```env
-BACKEND_URL="SampleURL"
-DISCORD_CLIENT_ID="SampleId"
+VITE_APP_BACKEND_URL=
+
+#discord
+DISCORD_CLIENT_ID=
+
+#portone
+VITE_APP_PORTONE_STORE_ID=
+VITE_APP_PORTONE_CHANNEL_KEY=
+VITE_APP_PORTONE_PAYMENT_ID_PREFIX=
+VITE_APP_PORTONE_PGPROVIDER=
+VITE_APP_PORTONE_CURRENCY=
 ```
 
 - BACKEND_URL : 백엔드 서버의 URL을 입력해 주세요.
 - DISCORD_CLIENT_URL : Discord Developer Portal에서 제공하는 Client Id를 입력해 주세요.
+
+> 포트원 API 정보는 [여기](https://portone.io/)에서 획득하실 수 있어요.
 
 ## Start your own client
 

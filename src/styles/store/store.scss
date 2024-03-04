@@ -4,7 +4,7 @@
 }
 
 .swiper {
-  margin-top: 62px;
+  margin-top: 80px;
   width: 100%;
 }
 
@@ -67,12 +67,12 @@
   }
   a {
     &:hover {
-      background-color: rgb(168, 119, 13);
-      color: white;
+      background-color: rgb(255, 186, 36);
     }
-    padding: 10px 20px;
+    padding: 8px 15px;
     border: 0;
-    font-size: 8px;
+    font-size: 10px;
+    font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
     background-color: white;

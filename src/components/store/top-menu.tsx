@@ -46,7 +46,14 @@ export default function TopMenu() {
             <input placeholder="검색어를 입력하세요" />
           </div>
         </div>
-        <div className="top-menu-back"></div>
+        <div className="top-menu-back">
+          <div className="top-menu-items">
+            <a href="/cart">장바구니</a>
+          </div>
+          <a className="top-menu-avatar">
+            <img src="/ui/profile/default.png" />
+          </a>
+        </div>
       </div>
     </>
   );

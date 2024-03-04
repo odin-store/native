@@ -72,12 +72,23 @@ $ pnpm i
 All values in .env.sample are example values. Please modify them according to your environment.
 
 ```env
-BACKEND_URL="SampleURL"
-DISCORD_CLIENT_ID="SampleId"
+VITE_APP_BACKEND_URL=
+
+#discord
+DISCORD_CLIENT_ID=
+
+#portone
+VITE_APP_PORTONE_STORE_ID=
+VITE_APP_PORTONE_CHANNEL_KEY=
+VITE_APP_PORTONE_PAYMENT_ID_PREFIX=
+VITE_APP_PORTONE_PGPROVIDER=
+VITE_APP_PORTONE_CURRENCY=
 ```
 
 - BACKEND_URL : URL of your backend server.
 - DISCORD_CLIENT_ID : Client ID provided by the Discord Developer Portal.
+
+> You can get your portone api info from [here](https://portone.io/)
 
 ## Start your own client
 
