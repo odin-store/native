@@ -67,7 +67,7 @@ $ git clone https://github.com/odin-store/native.git
 $ pnpm i
 ```
 
-3. Rename .env.sample to .env.
+3. Rename .env.sample to .env.development.
 
 All values in .env.sample are example values. Please modify them according to your environment.
 

@@ -5,6 +5,8 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  console.log(`${email},${password}`);
+
   return (
     <div className="login-background">
       <div className="login">

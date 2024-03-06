@@ -63,11 +63,76 @@ main {
     display: flex;
     align-items: center;
     margin-left: 10px;
+    cursor: pointer;
   }
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
+}
+
+.top-menu-avatar-buttons {
+  button {
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.096);
+    }
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    border: 0;
+    padding: 10px 20px;
+    width: 100%;
+    text-align: left;
+  }
+  width: 200px;
+  position: absolute;
+  right: 40px;
+  top: 65px;
+  background-color: black;
+  overflow: hidden;
+  border-radius: 10px 0 10px 10px;
+}
+
+.top-menu-avatar-preview {
+  img {
+    width: 100px;
+    border-radius: 100%;
+  }
+  a {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    right: 25px;
+    bottom: 55px;
+    color: black;
+    border-radius: 10px;
+    background-color: rgb(255, 186, 36);
+    border: 1px solid black;
+  }
+  p {
+    margin: 0;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  position: relative;
+  padding: 20px;
+  border-bottom: 0.3px solid rgba(255, 255, 255, 0.212);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .header-position-divider {

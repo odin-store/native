@@ -62,7 +62,7 @@ $ git clone https://github.com/odin-store/native.git
 $ pnpm i
 ```
 
-3. .env.sample을 .env로 변경합니다.
+3. .env.sample을 .env.development로 변경합니다.
 
 .env.sample의 값들은 전부 예시 값들입니다. 사용자의 환경에 맞춰 수정해 주세요.
 

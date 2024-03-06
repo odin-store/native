@@ -18,7 +18,7 @@ export default function Purchase() {
       }-${crypto.randomUUID()}`,
       pgProvider: import.meta.env.VITE_APP_PORTONE_PGPROVIDER,
       orderName: "마인크래프트 외 1",
-      totalAmount: 100000000,
+      totalAmount: 50000,
       currency: import.meta.env.VITE_APP_PORTONE_CURRENCY,
       payMethod: "CARD",
     });
