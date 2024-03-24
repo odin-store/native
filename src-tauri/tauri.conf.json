@@ -26,6 +26,10 @@
         "unmaximize": true,
         "unminimize": true,
         "startDragging": true
+      },
+      "http": {
+        "all": true,
+        "request": true
       }
     },
     "windows": [

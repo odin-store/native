@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
+import TopMenuAvatarButtons from "./top-menu-avatar-buttons";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../util/redux/reducer/user.reducer";
 
 export default function TopMenu() {
   const [isMenuOpened, setMenuOpen] = useState(false);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     const menu = document.getElementById("store-top-menu");
@@ -65,15 +69,15 @@ export default function TopMenu() {
               setMenuOpen(!isMenuOpened);
             }}
           >
-            <img src="/ui/profile/default.png" />
+            <img src={user.profile} />
           </a>
         </div>
         {isMenuOpened ? (
           <div className="top-menu-avatar-buttons">
             <div className="top-menu-avatar-preview">
-              <img src="/ui/profile/default.png" />
-              <p>Damie</p>
-              <a>
+              <img src={user.profile} />
+              <p>{user.username}</p>
+              <a href="/my">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -90,7 +94,7 @@ export default function TopMenu() {
                 </svg>
               </a>
             </div>
-            <button>Avatar</button>
+            <TopMenuAvatarButtons />
           </div>
         ) : (
           <></>

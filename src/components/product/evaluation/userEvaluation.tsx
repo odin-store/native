@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 
 export default function UserEvaluation() {
-  const [rating, setRating] = useState(4.9);
+  const [rating] = useState(4.9);
   const [evaluate, setEval] = useState("");
 
   useEffect(() => {
@@ -18,11 +18,6 @@ export default function UserEvaluation() {
       setEval("압도적으로 부정적");
     }
   }, [rating]);
-
-  const handleRating = (rate: number) => {
-    setRating(rate);
-    console.log(rate);
-  };
 
   const onPointerEnter = () => {
     return;
@@ -45,7 +40,7 @@ export default function UserEvaluation() {
           <Rating
             className="product-rate-star"
             allowFraction={true}
-            onClick={handleRating}
+            allowHover={false}
             onPointerEnter={onPointerEnter}
             onPointerLeave={onPointerLeave}
             initialValue={rating}

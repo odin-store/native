@@ -1,6 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState } from "react";
-import { Provider as ReduxProvider } from "react-redux";
+import { useEffect, useState } from "react";
+import {
+  Provider as ReduxProvider,
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import { store } from "./util/redux/store.ts";
 import Layout from "./components/layout/layout.tsx";
 import Titlebar from "./components/titlebar";
 import Library from "./pages/library/library.tsx";
@@ -9,16 +14,50 @@ import Products from "./pages/store/product.tsx";
 import ContextMenu from "./components/global/contextMenu.tsx";
 import ConsoleWriter from "./components/global/console.tsx";
 import LoadingScreen from "./pages/loading/loading.tsx";
-import { store } from "./util/redux/store.ts";
 import Modal from "./components/global/modal.tsx";
 import Cart from "./pages/cart/cart.tsx";
 import NotFound from "./pages/404/notFound.tsx";
 import Login from "./pages/login/login.tsx";
 import PurchaseSuccess from "./components/cart/success.tsx";
+import {
+  selectUser,
+  setLogin,
+  setProfile,
+  setUsername,
+} from "./util/redux/reducer/user.reducer.ts";
+import { OdinAPI } from "./util/api/odin-api.ts";
 
 function App() {
   const [isLoading, setLoading] = useState(false);
-  const [isLoggedIn] = useState(true);
+
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+  const api = new OdinAPI();
+
+  useEffect(() => {
+    const prepare = async () => {
+      if (user.isLoggedIn) {
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const res = await api.get("/auth/authenticate");
+
+        dispatch(setLogin(true));
+        dispatch(setUsername(res.data.username));
+        dispatch(setProfile(res.data.profile));
+
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        return;
+      }
+    };
+
+    prepare();
+  }, []);
 
   if (isLoading) {
     return (
@@ -26,12 +65,12 @@ function App() {
         <ConsoleWriter />
         <ContextMenu />
         <Titlebar />
-        <LoadingScreen setLoading={setLoading} />
+        <LoadingScreen />
       </div>
     );
   }
 
-  if (!isLoggedIn) {
+  if (!user.isLoggedIn) {
     return (
       <div className="container">
         <ConsoleWriter />
