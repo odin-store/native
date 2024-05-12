@@ -45,14 +45,6 @@ Features for gamers, such as Discord integration and DRM-Free, will also be avai
 - Rust
 - pnpm
 
-# Running on your machine
-
-## Requirements
-
-- Node.js ^21.6 (Recommend)
-- Rust
-- pnpm
-
 ## Installation
 
 1. Clone the project
