@@ -5,9 +5,10 @@ use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 use declarative_discord_rich_presence::{activity, DeclarativeDiscordIpcClient};
 use declarative_discord_rich_presence::activity::{Assets, Timestamps};
-use tauri::{Manager, State};
+use tauri::{Manager};
 
 mod discord;
+mod download;
 
 fn main() {
     if cfg!(debug_assertions) {
@@ -49,7 +50,7 @@ fn main() {
 
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![discord::set_activity])
+        .invoke_handler(tauri::generate_handler![discord::set_activity, download::download_file_with_resume])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

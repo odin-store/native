@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../../styles/login/login.scss";
 import { OdinAPI } from "../../util/api/odin-api";
 import { useDispatch } from "react-redux";
@@ -7,8 +7,18 @@ import {
   setProfile,
   setUsername,
 } from "../../util/redux/reducer/user.reducer";
+import { invoke } from "@tauri-apps/api";
 
 export default function Login() {
+  useEffect(() => {
+    invoke("set_activity", {
+      details: `로그인 중`,
+      state: "In Login Page",
+      image: "browsing",
+      imageDetails: "In Odin Store",
+    });
+  }, []);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

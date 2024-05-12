@@ -1,7 +1,7 @@
 use std::env;
 use declarative_discord_rich_presence::{activity, DeclarativeDiscordIpcClient};
 use declarative_discord_rich_presence::activity::{Assets, Timestamps};
-use tauri::State;
+use tauri::{State};
 
 #[tauri::command]
 pub fn set_activity(

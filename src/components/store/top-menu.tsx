@@ -29,7 +29,6 @@ export default function TopMenu() {
     });
 
     document.addEventListener("click", () => {
-      console.log(isMenuOpened);
       if (isMenuOpened) {
         setMenuOpen(false);
       }

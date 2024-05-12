@@ -42,13 +42,6 @@ export default function Library() {
         <LibraryItem />
         <LibraryItem />
         <LibraryItem />
-        <LibraryItem />
-        <LibraryItem />
-        <LibraryItem />
-        <LibraryItem />
-        <LibraryItem />
-        <LibraryItem />
-        <LibraryItem />
       </div>
     </div>
   );

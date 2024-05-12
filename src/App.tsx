@@ -26,9 +26,10 @@ import {
   setUsername,
 } from "./util/redux/reducer/user.reducer.ts";
 import { OdinAPI } from "./util/api/odin-api.ts";
+import EasterEgg from "./components/global/undertale.tsx";
 
 function App() {
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -88,6 +89,7 @@ function App() {
         <ContextMenu />
         <Titlebar />
         <Layout>
+          <EasterEgg />
           <BrowserRouter>
             <Modal />
             <Routes>

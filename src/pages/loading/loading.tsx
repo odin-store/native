@@ -13,7 +13,7 @@ export default function LoadingScreen() {
   useEffect(() => {
     document.addEventListener("keypress", (e) => {
       if (loadingIndex === 0 && e.key === "x") {
-        window.open("https://damie.works", "_blank");
+        window.open("https://www.youtube.com/watch?v=xvFZjo5PgG0", "_blank");
       }
     });
   });

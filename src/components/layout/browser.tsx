@@ -1,3 +1,5 @@
+import { invoke } from "@tauri-apps/api";
+import { open } from "@tauri-apps/api/dialog";
 import React from "react";
 
 function Browser() {
@@ -47,6 +49,21 @@ function Browser() {
         </a>
       </div>
       <div className="browser-bottom">
+        <button
+          onClick={async () => {
+            const selected = await open({
+              directory: true,
+              multiple: false,
+            });
+            console.log(selected);
+            invoke("download_file_with_resume", {
+              url: "http://localhost:8080/games/download/odin-1711812665673",
+              filePath: selected,
+            });
+          }}
+        >
+          Debug - 다운로드 테스트
+        </button>
         <a href="https://damie.works" target="_blank">
           <img
             src="/damie-original-series/logo.png"
